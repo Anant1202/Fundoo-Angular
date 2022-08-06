@@ -1,0 +1,50 @@
+<div fxflex=100 fxLayout="row" fxLayoutAlign="center center" style="margin-top: 100px">
+
+  <mat-card fxFlex=35 fxLayout="row" fxLayoutAlign="center center" style="padding:35px;">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div>
+          <h3 style="font-size:30px; text-align: center">
+            <span style="color:blue;">F</span>
+            <span style="color:red;">U</span>
+            <span style="color:rgb(255, 255, 0);">N</span>
+            <span style="color:blue;">D</span>
+            <span style="color:green;">O</span>
+            <span style="color:red;">O</span>
+          </h3>
+        </div>
+        <h1 style="text-align: center">Sign in</h1>
+        <p style="text-align: center">to continue to Fundoo</p>
+  
+      <div>
+        <mat-form-field fxFlex=100 appearance="outline">
+          <mat-label>email</mat-label>
+          <input matInput placeholder="email" formControlName="email">
+          <mat-error>email is required</mat-error>
+        </mat-form-field>
+      </div>
+      
+      <br>
+      <div>
+        <mat-form-field fxFlex=100 appearance="outline">
+          <mat-label>password</mat-label>
+          <input matInput formControlName="password" placeholder="password">
+          <mat-error>password is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <a routerLink="/forgot-password">Forgot email?</a>
+      </div>
+      <br><br>
+      <div> 
+        <p>Not your computer? Use Guest mode to sign in privately.</p>
+        <p style="color: blue;">Learn more</p>
+      </div>
+      <div fxLayoutGap="150px">
+        <a routerLink="/registation">Create account</a>
+        <button mat-raised-button color="primary">Next</button>
+      </div>
+
+
+    </form>
+  </mat-card>
+</div>
