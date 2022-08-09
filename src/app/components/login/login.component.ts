@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService,private snackbar:MatSnackBar) { }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -24,16 +26,24 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.valid) {
       let reqData = {
-        email: this.loginForm.value.email,
+        emailID: this.loginForm.value.email,
         password: this.loginForm.value.password
       }
+      console.log(reqData);
       this.userService.loginUserService(reqData).subscribe((response: any) => {
-        console.log("login successful", response);
+        this.snackbar.open('Login successful','',{
+          duration:2000,
+        });
+        localStorage.setItem("token",response.data);
       }, (error: any) => {
-        console.log(error);
+        this.snackbar.open('Invalid email or password','',{
+          duration:2000,
+        });
       })
     } else {
-      return;
+      this.snackbar.open('Please enter your email and password','',{
+        duration:2000,
+      });
     }
   }
 }

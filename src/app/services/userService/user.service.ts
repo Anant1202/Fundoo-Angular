@@ -50,6 +50,7 @@ export class UserService {
         'Authorization': this.token
       })
     }
-    return this.httpService.postService('User/Forget', reqData, false, httpOptions)
+    return this.httpService.postService(`User/Forget?EmailID=${reqData.EmailID}`, reqData, false, httpOptions)
   }
 }
+

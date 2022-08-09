@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registation',
@@ -12,7 +13,7 @@ export class RegistationComponent implements OnInit {
   registationForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService,private snackbar:MatSnackBar) { }
 
 
   ngOnInit() {
@@ -30,17 +31,24 @@ export class RegistationComponent implements OnInit {
       let reqData = {
         firstName: this.registationForm.value.firstName,
         lastName: this.registationForm.value.lastName,
-        email: this.registationForm.value.email,
+        emailID: this.registationForm.value.email,
         password: this.registationForm.value.password,
         confirmPassword: this.registationForm.value.confirmPassword
       }
+      console.log(reqData);
       this.userService.registerUserService(reqData).subscribe((response: any) => {
-        console.log("registration succesful", response);
-      }, (error: any) => {
-        console.log(error);
+        this.snackbar.open('Registration successful','',{
+          duration:2000,
+        });
+      },  (error: any) => {
+        this.snackbar.open('Invalid data entered','',{
+          duration:2000,
+        });
       })
     } else {
-      return;
+      this.snackbar.open('Please enter valid data','',{
+        duration:2000,
+      });
     }
   }
 }

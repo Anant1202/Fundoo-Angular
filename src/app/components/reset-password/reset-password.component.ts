@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html',
@@ -11,7 +11,7 @@ export class ResetPasswordComponent implements OnInit {
   resetpasswordForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private snackbar:MatSnackBar) { }
   ngOnInit() {
     this.resetpasswordForm = this.formBuilder.group({
       
@@ -27,12 +27,19 @@ export class ResetPasswordComponent implements OnInit {
         confirmPassword: this.resetpasswordForm.value.confirmPassword
       }
       this.userService.resetpasswordUserService(reqData).subscribe((response: any) => {
-        console.log("reset password successful", response);
+        this.snackbar.open('Reset successful','',{
+          duration:2000,
+        });
+        localStorage.setItem("token",response.data);
       }, (error: any) => {
-        console.log(error);
+        this.snackbar.open('Invalid password or confirmpassword','',{
+          duration:2000,
+        });
       })
     } else {
-      return;
+      this.snackbar.open('Please enter password','',{
+        duration:2000,
+      });
     }
   }
 }

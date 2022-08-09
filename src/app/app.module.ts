@@ -17,6 +17,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule,MatInputModule,MatIconModule,FlexLayoutModule,
-    FormsModule,ReactiveFormsModule,MatCardModule,MatButtonModule,MatCheckboxModule,HttpClientModule
+    FormsModule,ReactiveFormsModule,MatCardModule,MatButtonModule,MatCheckboxModule,HttpClientModule,MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
