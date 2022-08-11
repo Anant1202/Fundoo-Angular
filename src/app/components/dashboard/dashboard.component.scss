@@ -29,3 +29,36 @@ h1.example-app-name {
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
 }
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5px;
+    background: #f1f3f4;
+    border: solid;
+    border-color: lightgrey;
+    border-radius: 10px;
+    width: 700px;
+    height: 45px;
+    margin-left: 80px;
+    box-shadow: 2px 2px 5px #E8E8E8;
+    align-items: center;
+}
+
+.search-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 35px;
+    padding-top: 5px;
+    block-size: 23px;
+
+}
+
+.searchInput {
+    height: 30px;
+    border: 0px white;
+    background: none;
+    width: 90%;
+    font-size: large;
+}

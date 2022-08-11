@@ -1,67 +1,75 @@
-<div>
-    <mat-toolbar fxLayoutGap="240" class="example-toolbar" fxLayout="row">
-        <mat-toolbar-row>
-            <button mat-icon-button (click)="snav.toggle();">
-                <mat-icon>menu</mat-icon>
-            </button>
+<div class="example-container">
+    <mat-toolbar class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <img src="assets\image\keep_2020q4_48dp.png" alt="KeepImage">
+        <span>Fundoo</span>
+        <div fxLayoutGap="60" fxLayoutAlign="row">
+            <div class="search" fxLayoutAlign="90">
+                <img class="search-icon" src="assets\image\search_FILL0_wght400_GRAD0_opsz48.png">
+                <input class="searchInput" placeholder="Search">
 
-            <img class="keepimg" src="assets\image\keep_2020q4_48dp.png" alt="keep img" width="40">
-            <h1 style="display: inline-block;font-size: 25px;color: #5f6368;">Fundoo</h1>
-        </mat-toolbar-row>
+            </div>
 
-        <mat-toolbar-row class="Searchbar">
-            <mat-form-field appearance="outline">
-                <button mat-icon-button>
-                    <img style="margin:left 10px;width: 25px;" src="assets\image\search_FILL0_wght400_GRAD0_opsz48.png">
-                </button>
-                <input matInput placeholder="Search" style="padding:6px;font-size: 18px">
-            </mat-form-field>
-        </mat-toolbar-row>
-
-        <mat-toolbar-row class="toolbar" fxLayoutGap="32" fxLayout="row">
-            <div fxLayoutGap="15">
+            <div fxLayoutGap="12">
                 <button class="toolbaarButton" style="border:none">
-                    <img src="assets\image\refresh_FILL0_wght400_GRAD0_opsz48.png" alt="refresh" height="32px">
+                    <img src="assets\image\refresh_FILL0_wght400_GRAD0_opsz48.png" alt="refresh" height="30px">
                 </button>
                 <button class="toolbaarButton" style="border:none">
-                    <img src="assets\image\view-cards-512.png" alt="listview" height="32px">
+                    <img src="assets\image\view-cards-512.png" alt="listview" height="30px">
                 </button>
                 <button class="toolbaarButton" style="border:none">
-                    <img src="assets\image\settings_FILL0_wght400_GRAD0_opsz48.png" alt="settings" height="32px">
+                    <img src="assets\image\settings_FILL0_wght400_GRAD0_opsz48.png" alt="settings" height="30px">
                 </button>
             </div>
-            <button class="toolbaarButton" style="border:none">
-                <img src="assets\image\apps_FILL0_wght400_GRAD0_opsz48.png" alt="apps" height="32px">
-            </button>
-            <button class="toolbaarButton" style="border:none">
-                <img src="assets\image\logoutimg.png" alt="apps" height="32px">
-            </button>
-        </mat-toolbar-row>
 
+
+            <div fxLayoutGap="25px">
+                <button class="toolbaarButton" style="border:none">
+                    <img src="assets\image\apps_FILL0_wght400_GRAD0_opsz48.png" alt="apps" height="30px">
+                </button>
+                <button class="toolbaarButton" style="border:none;">
+                    <img src="assets\image\logoutimg.png" alt="apps" height="30px">
+                </button>
+            </div>
+
+        </div>
     </mat-toolbar>
-
-
     <mat-sidenav-container class="example-sidenav-container">
-        <mat-sidenav #snav mode="side">
-            <mat-nav-list class="menu-item">
-                <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img src="assets\image\bulb.png"
-                        style="margin-right: 10%; height:30px">Notes</a>
-                <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img src="assets\image\bell-ring-alarm.png"
-                        style="margin-right: 10%; height:30px">Remainders</a>
-                <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img src="assets\image\pen.png"
-                        style="margin-right: 10%; height:30px">Edit labels</a>
-                <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img src="assets\image\archive.png"
-                        style="margin-right: 10%; height:30px">Archive</a>
-                <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img src="assets\image\bin.png"
-                        style="margin-right: 10%; height:30px">Trash</a>
-                <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <div>
+
+                <mat-nav-list class="menu-item" style="width:250px">
+                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                            src="assets\image\lightbulb_FILL0_wght400_GRAD0_opsz48.png"
+                            style="margin-right: 15%; height:30px">Notes</a>
+                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                            src="assets\image\notifications_FILL0_wght400_GRAD0_opsz48.png"
+                            style="margin-right: 15%; height:30px">Remainders</a>
+                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                            src="assets\image\edit_FILL0_wght400_GRAD0_opsz48.png"
+                            style="margin-right: 15%; height:30px">Edit labels</a>
+                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                            src="assets\image\archive_FILL0_wght400_GRAD0_opsz48.png"
+                            style="margin-right: 15%; height:30px">Archive</a>
+                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                            src="assets\image\delete_FILL0_wght400_GRAD0_opsz48.png"
+                            style="margin-right: 15%; height:30px">Trash</a>
+                    <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
 
 
-            </mat-nav-list>
+                </mat-nav-list>
+
+            </div>
         </mat-sidenav>
 
         <mat-sidenav-content>
-            <div style="height:91.8vh; background-color:white"></div>
+            <!-- <div style="height:91.8vh; background-color:white"></div>  -->
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
+
     </mat-sidenav-container>
+
 </div>
