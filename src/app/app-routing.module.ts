@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreatenoteComponent } from './components/createnote/createnote.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { LoginComponent } from './components/login/login.component';

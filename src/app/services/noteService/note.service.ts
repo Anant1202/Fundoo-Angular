@@ -8,15 +8,15 @@ import { HttpService } from '../HttpService/http.service';
 export class NoteService {
   token: any
   constructor(private httpService: HttpService) { }
-  CreateNote(user: any) {
-    console.log(user);
+  CreateNote(reqData: any) {
+    console.log(reqData);
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'Authorization': this.token
+        'Authorization':'Bearer '+this.token
       })
     }
-    this.httpService.postService('Note/Create', user, true, httpOptions)
+    return this.httpService.postService(`Note/Create`, reqData, true, httpOptions)
   }
 
   GetAllNotes() {
@@ -28,18 +28,18 @@ export class NoteService {
     }
     this.httpService.getService('Note/Retrieve', true, httpOptions)
   }
-  UpdateNote(user: any) {
-    console.log(user);
+  UpdateNote(reqData: any) {
+    console.log(reqData);
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization': this.token
       })
     }
-    this.httpService.putService('Note/Update', user, true, httpOptions)
+    this.httpService.putService('Note/Update',reqData, true, httpOptions)
   }
-  DeleteNote(user: any) {
-    console.log(user);
+  DeleteNote(reqData: any) {
+    console.log(reqData);
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',

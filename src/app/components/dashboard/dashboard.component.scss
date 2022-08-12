@@ -36,7 +36,7 @@ h1.example-app-name {
     justify-content: center;
     padding-top: 5px;
     background: #f1f3f4;
-    border: solid;
+    border:solid;
     border-color: lightgrey;
     border-radius: 10px;
     width: 700px;
@@ -57,8 +57,9 @@ h1.example-app-name {
 
 .searchInput {
     height: 30px;
-    border: 0px white;
+    border: none;
     background: none;
     width: 90%;
     font-size: large;
+    outline:none
 }

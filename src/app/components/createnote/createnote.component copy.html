@@ -1,8 +1,8 @@
 <div class="main">
 
-    <mat-card class="card-1" *ngIf="!Display" (click)="toggleDisplay()">
+    <mat-card class="card-1" *ngIf="!isShow" (click)="toggleDisplay()">
          
-        <input class="search" placeholder="Fundoo note" style="height:50px;width:380px;border:none">
+        <input class="search" placeholder="Fundoo note" style="height:30px;width:380px;border:none">
         <div fxLayoutGap="20px" fxLayout="row">
             <img src="assets\image\title-1.svg" style="height:20px; opacity: 0.5;">
             <img src="assets\image\title-2.svg" style="height:20px; opacity: 0.5;">
@@ -11,18 +11,18 @@
 
     </mat-card>
 
-    <mat-card class="card-2" *ngIf="Display">
+    <mat-card class="card-2" *ngIf="isShow">
         <form fxLayout="column" [formGroup]="createnoteForm" (ngSubmit)="createnote()">
             <div fxLayout="row">
-                <input class="title" placeholder="Title" formControlName="title" style="height:50px;width:500px;border:none" >
+                <input class="title" placeholder="Title" formControlName="title" style="height:30px;width:380px;border:none" >
                 <img src="assets\image\pin.svg" style="height:20px;margin-left: auto; opacity: 0.7;">
             </div>
-            <br>
+            <br><br>
             <div>
-                <input class="title" placeholder="Fundoo note" formControlName="description" style="height:50px;width:500px;border:none">
+                <input class="title" placeholder="Fundoo note" formControlName="description" style="height:30px;width:380px;border:none">
                 <br>
                 <br>
-                
+                <br>
 
                 <div fxLayout="row">
                     <div fxLayoutGap="30px">
@@ -33,7 +33,7 @@
                         <img src="assets\image\5.svg" style="height:20px;margin-right: auto; opacity: 0.7;">
                         <img src="assets\image\6.svg" style="height:20px;margin-right: auto; opacity: 0.7;">
                     </div>
-                    <button mat-button (click)="createnote()" style="margin-left:auto; border:none">Close</button>
+                    <button style="margin-left:auto; border:none">Close</button>
                 </div>
 
             </div>

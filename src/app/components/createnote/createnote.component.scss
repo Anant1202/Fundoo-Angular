@@ -1,11 +1,25 @@
-.title {
+.card-1{
     width:500px;
-    height:28px;
+    height:30px;
     display:flex;
-   
     align-items: center;
     margin-right:auto;
     margin-top:40px;
     vertical-align:middle;
     margin-left: auto;
+}
+.search{
+   
+    outline: none;
+}
+.card-2{
+    width:500px;
+    height:170px;
+    margin-right:auto;
+    margin-left: auto;
+    margin-top:40px;
+}
+.title{
+    border:none;
+    outline: none;
 }

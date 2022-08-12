@@ -30,7 +30,7 @@ export class ResetPasswordComponent implements OnInit {
         this.snackbar.open('Reset successful','',{
           duration:2000,
         });
-        localStorage.setItem("token",response.data);
+        
       }, (error: any) => {
         this.snackbar.open('Invalid password or confirmpassword','',{
           duration:2000,
