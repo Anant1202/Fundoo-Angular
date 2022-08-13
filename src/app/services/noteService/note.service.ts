@@ -7,47 +7,31 @@ import { HttpService } from '../HttpService/http.service';
 })
 export class NoteService {
   token: any
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService) {
+    this.token=localStorage.getItem("token")
+   }
   CreateNote(reqData: any) {
     console.log(reqData);
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'Authorization':'Bearer '+this.token
+        'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpService.postService(`Note/Create`, reqData, true, httpOptions)
+    return this.httpService.postService('Note/Create', reqData, true, httpOptions)
   }
 
   GetAllNotes() {
+    
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        'Authorization': this.token
+        'Authorization': 'Bearer ' + this.token
       })
     }
-    this.httpService.getService('Note/Retrieve', true, httpOptions)
+    return this.httpService.getService('Note/Retrieve', true, httpOptions)
   }
-  UpdateNote(reqData: any) {
-    console.log(reqData);
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json',
-        'Authorization': this.token
-      })
-    }
-    this.httpService.putService('Note/Update',reqData, true, httpOptions)
-  }
-  DeleteNote(reqData: any) {
-    console.log(reqData);
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json',
-        'Authorization': this.token
-      })
-    }
-    this.httpService.delete('Note/Delete', true, httpOptions)
-  }
+  
 }
 
 

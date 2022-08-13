@@ -15,14 +15,17 @@ export class HttpService {
     return this.httpClient.post(this.BaseUrl + url, reqData, token && httpHeadersOptions)
   }
   getService(url: string, token: boolean, httpHeadersOptions: any) {
-    
+   
+
+    return this.httpClient.get(this.BaseUrl + url, token && httpHeadersOptions)
+
   }
   putService(url: string, reqData: any, token: boolean, httpHeadersOptions: any) {
     console.log(reqData);
 
-    return this.httpClient.post(this.BaseUrl + url, reqData, token && httpHeadersOptions)
+    return this.httpClient.put(this.BaseUrl + url, reqData, token && httpHeadersOptions)
   }
-  delete(url: string, token: boolean, httpHeadersOptions: any) {
+  delete(url: string, reqData: any, token: boolean, httpHeadersOptions: any) {
 
   }
 }

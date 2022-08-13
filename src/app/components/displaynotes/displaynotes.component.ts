@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-displaynotes',
   templateUrl: './displaynotes.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisplaynotesComponent implements OnInit {
 
   constructor() { }
-
+  @Input() MyNotes:any;
   ngOnInit(): void {
   }
 

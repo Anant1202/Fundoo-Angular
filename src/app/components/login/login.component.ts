@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,17 +13,18 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService,private snackbar:MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService,private snackbar:MatSnackBar,private router:Router) { }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
 
     });
+    
   }
 
   login() {
-
+    
     if (this.loginForm.valid) {
       let reqData = {
         emailID: this.loginForm.value.email,
