@@ -32,10 +32,12 @@ export class LoginComponent implements OnInit {
       }
       console.log(reqData);
       this.userService.loginUserService(reqData).subscribe((response: any) => {
+        
         this.snackbar.open('Login successful','',{
           duration:2000,
         });
         localStorage.setItem("token",response.data);
+        this.router.navigateByUrl("/dashboard/get-all-notes");
       }, (error: any) => {
         this.snackbar.open('Invalid email or password','',{
           duration:2000,

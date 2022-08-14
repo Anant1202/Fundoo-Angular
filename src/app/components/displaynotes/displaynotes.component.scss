@@ -1,12 +1,28 @@
-.notelist{
-    width:310px;
-    height:150px;
+.notelist {
+    width: 310px;
+    height: 150px;
     margin-bottom: 10px;
     margin-left: 20px;
-    margin-top:20px;
-    
-    
+    margin-top: 20px;
+
+
 }
-.icons{
-    margin-top:70px;
+.pin{
+    height:20px;
+    margin-left:230px; 
+    opacity: 0.7;
+    visibility: hidden;
+}
+.notelist:hover .pin {
+    visibility: visible;
+}
+.noteicon {
+    margin-top: 70px;
+}
+.icons {
+   visibility: hidden;
+}
+
+.notelist:hover .icons {
+    visibility: visible;
 }

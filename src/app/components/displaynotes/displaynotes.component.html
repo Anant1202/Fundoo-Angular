@@ -1,15 +1,18 @@
 <mat-card class="notelist" *ngFor='let note of MyNotes'>
-    <div >
-        <div>
+    <div>
+        <div fxLayout="row">
             {{note.title}}
+            <div>
+            <img class="pin" src="assets\image\pin.svg">
+            </div>
         </div>
         <br>
         <div>
             {{note.description}}
         </div>
     </div>
-    <div class="icons">
-        <app-icons></app-icons>
+    <div class="noteicon">
+        <app-icons class="icons"></app-icons>
     </div>
 
 
