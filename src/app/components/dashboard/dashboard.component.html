@@ -14,24 +14,28 @@
 
             <div fxLayoutGap="12">
                 <button class="toolbaarButton" style="border:none; opacity: 0.6;">
-                    <img src="assets\image\refresh_FILL0_wght400_GRAD0_opsz48.png" alt="refresh" height="30px">
+                    <img src="assets\image\refresh_FILL0_wght400_GRAD0_opsz48.png" alt="refresh" height="30px" style="margin-top: 15px;">
                 </button>
                 <button class="toolbaarButton" style="border:none; opacity: 0.6;">
-                    <img src="assets\image\view-cards-512.png" alt="listview" height="30px">
+                    <img src="assets\image\view-cards-512.png" alt="listview" height="30px" style="margin-top: 15px;">
                 </button>
                 <button class="toolbaarButton" style="border:none ; opacity: 0.6;">
-                    <img src="assets\image\settings_FILL0_wght400_GRAD0_opsz48.png" alt="settings" height="30px">
+                    <img src="assets\image\settings_FILL0_wght400_GRAD0_opsz48.png" alt="settings" height="30px" style="margin-top: 15px;">
                 </button>
             </div>
 
 
             <div fxLayoutGap="25px">
                 <button class="toolbaarButton" style="border:none; opacity: 0.6;">
-                    <img src="assets\image\apps_FILL0_wght400_GRAD0_opsz48.png" alt="apps" height="30px">
+                    <img src="assets\image\apps_FILL0_wght400_GRAD0_opsz48.png" alt="apps" height="30px" style="margin-top: 15px;">
                 </button>
-                <button class="toolbaarButton" style="border:none;; opacity: 0.6;">
-                    <img src="assets\image\logoutimg.png" alt="apps" height="30px">
+                <button  mat-button [matMenuTriggerFor]="menu" class="toolbaarButton" style="border:none;; opacity: 0.6;">
+                    <img src="assets\image\logoutimg.png" alt="apps" height="30px" style="margin-bottom: 20px;">
                 </button>
+                <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+                <mat-menu #menu="matMenu">
+                    <button (click)="Logout()" mat-menu-item style="opacity:0.6;"><img src="assets\image\logout.png" height="30px"> </button>
+                    </mat-menu>
             </div>
 
         </div>
@@ -66,7 +70,7 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
-            
+
             <router-outlet></router-outlet>
         </mat-sidenav-content>
 

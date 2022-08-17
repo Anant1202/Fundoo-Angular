@@ -26,6 +26,8 @@ import { CreatenoteComponent } from './components/createnote/createnote.componen
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { AuthguardServiceService } from './services/AuthguardService/authguard-service.service';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -46,9 +48,11 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     AppRoutingModule,
     BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatIconModule, FlexLayoutModule,
     FormsModule, ReactiveFormsModule, MatCardModule, MatButtonModule, MatCheckboxModule, HttpClientModule,
-    MatSnackBarModule, MatToolbarModule,MatSidenavModule,MatListModule
+    MatSnackBarModule, MatToolbarModule,MatSidenavModule,MatListModule,MatMenuModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

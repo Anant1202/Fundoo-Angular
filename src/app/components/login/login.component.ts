@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  //user='1';
   loginForm!: FormGroup;
   submitted = false;
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
 
     });
-    
+    //localStorage.setItem('SessionUser',this.user);
   }
 
   login() {

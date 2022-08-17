@@ -6,7 +6,7 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { LoginComponent } from './components/login/login.component';
 import { RegistationComponent } from './components/registation/registation.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password/:token', component: ResetPasswordComponent },
   {
-    path: 'dashboard', component: DashboardComponent,
+    path: 'dashboard', component: DashboardComponent,canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: "/dashboard/get-all-notes", pathMatch: 'full' },
       { path: 'get-all-notes', component: GetAllNotesComponent },
-      ]
+    ]
   }
 ];
 

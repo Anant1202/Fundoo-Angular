@@ -1,15 +1,16 @@
 .notelist {
-    width: 310px;
+    width: 250px;
     height: 150px;
     margin-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 50px;
     margin-top: 20px;
+    float:left
 
 
 }
 .pin{
     height:20px;
-    margin-left:230px; 
+    margin-left:180px; 
     opacity: 0.7;
     visibility: hidden;
 }
@@ -17,7 +18,7 @@
     visibility: visible;
 }
 .noteicon {
-    margin-top: 70px;
+    margin-top: 50px;
 }
 .icons {
    visibility: hidden;
