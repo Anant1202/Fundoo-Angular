@@ -1,0 +1,18 @@
+<div class="main" fxLayout="column">
+    <div class="title" fxLayot="row" fxLayoutGap="120px">
+        <input type="text" [(ngModel)]="title" style="border:none">
+        <img class="pin" src="assets\image\pin.svg" style="opacity: 0.7;">
+
+    </div>
+    <br>
+    <div class="description">
+        <input type="text" [(ngModel)]="description" style="border:none">
+    </div>
+    <div class="icons" fxLayout="row" fxLayoutGap="20px">
+
+
+        <app-icons class="bottomicon"></app-icons>
+
+        <button (click)="updateNote()">close</button>
+    </div>
+</div>

@@ -1,13 +1,13 @@
 <mat-card class="notelist" *ngFor='let note of MyNotes.reverse()'>
     <div>
-        <div fxLayout="row">
+        <div (click)="openUpdateNoteDialog(note)" fxLayout="row">
             {{note.title}}
             <div>
             <img class="pin" src="assets\image\pin.svg">
             </div>
         </div>
         <br>
-        <div>
+        <div (click)="openUpdateNoteDialog(note)">
             {{note.description}}
         </div>
     </div>
