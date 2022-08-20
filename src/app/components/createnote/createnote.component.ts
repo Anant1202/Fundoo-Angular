@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/noteService/note.service';
@@ -12,7 +12,7 @@ export class CreatenoteComponent implements OnInit {
   Display = false;
   createnoteForm!: FormGroup;
   submitted = false;
-
+  @Output() autoRefreshEventfromCreate = new EventEmitter<any>();
   constructor(private formBuilder: FormBuilder, private noteService: NoteService, private snackbar: MatSnackBar) { }
 
   toggleDisplay() {
@@ -47,6 +47,7 @@ export class CreatenoteComponent implements OnInit {
         this.snackbar.open('note created successful', '', {
           duration: 2000,
         });
+        this.autoRefreshEventfromCreate.emit()
 
       }, (error: any) => {
         console.log(error);

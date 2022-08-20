@@ -40,5 +40,6 @@ export class DashboardComponent implements OnDestroy {
     localStorage.removeItem("token");
     this.router.navigateByUrl("/login");
   }
+  
   shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 }

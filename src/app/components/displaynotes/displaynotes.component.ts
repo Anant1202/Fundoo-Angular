@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Input } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
@@ -12,6 +12,7 @@ export class DisplaynotesComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
   @Input() MyNotes: any;
+  @Output() autoRefreshEventfromDisplay = new EventEmitter<any>();
   ngOnInit(): void {
   }
 
@@ -30,4 +31,8 @@ export class DisplaynotesComponent implements OnInit {
 
   }
 
+  dataReceivedfromIconComponent(){
+    console.log("autorefresh called in displaynote");
+    this.autoRefreshEventfromDisplay.emit()
+  }
 }

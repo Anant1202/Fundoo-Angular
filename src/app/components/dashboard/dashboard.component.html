@@ -14,28 +14,33 @@
 
             <div fxLayoutGap="12">
                 <button class="toolbaarButton" style="border:none; opacity: 0.6;">
-                    <img src="assets\image\refresh_FILL0_wght400_GRAD0_opsz48.png" alt="refresh" height="30px" style="margin-top: 15px;">
+                    <img src="assets\image\refresh_FILL0_wght400_GRAD0_opsz48.png" alt="refresh" height="30px"
+                        style="margin-top: 15px;">
                 </button>
                 <button class="toolbaarButton" style="border:none; opacity: 0.6;">
                     <img src="assets\image\view-cards-512.png" alt="listview" height="30px" style="margin-top: 15px;">
                 </button>
                 <button class="toolbaarButton" style="border:none ; opacity: 0.6;">
-                    <img src="assets\image\settings_FILL0_wght400_GRAD0_opsz48.png" alt="settings" height="30px" style="margin-top: 15px;">
+                    <img src="assets\image\settings_FILL0_wght400_GRAD0_opsz48.png" alt="settings" height="30px"
+                        style="margin-top: 15px;">
                 </button>
             </div>
 
 
             <div fxLayoutGap="25px">
                 <button class="toolbaarButton" style="border:none; opacity: 0.6;">
-                    <img src="assets\image\apps_FILL0_wght400_GRAD0_opsz48.png" alt="apps" height="30px" style="margin-top: 15px;">
+                    <img src="assets\image\apps_FILL0_wght400_GRAD0_opsz48.png" alt="apps" height="30px"
+                        style="margin-top: 15px;">
                 </button>
-                <button  mat-button [matMenuTriggerFor]="menu" class="toolbaarButton" style="border:none;; opacity: 0.6;">
+                <button mat-button [matMenuTriggerFor]="menu" class="toolbaarButton"
+                    style="border:none;; opacity: 0.6;">
                     <img src="assets\image\logoutimg.png" alt="apps" height="30px" style="margin-bottom: 20px;">
                 </button>
                 <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
                 <mat-menu #menu="matMenu">
-                    <button (click)="Logout()" mat-menu-item style="opacity:0.6;"><img src="assets\image\logout.png" height="30px"> </button>
-                    </mat-menu>
+                    <button (click)="Logout()" mat-menu-item style="opacity:0.6;"><img src="assets\image\logout.png"
+                            height="30px"> </button>
+                </mat-menu>
             </div>
 
         </div>
@@ -46,21 +51,21 @@
             <div>
 
                 <mat-nav-list class="menu-item" style="width:250px">
-                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                    <a mat-list-item  routerLink="/dashboard/get-all-notes" style="border-radius:10px 40px 40px 10px ;"><img
                             src="assets\image\lightbulb_FILL0_wght400_GRAD0_opsz48.png"
                             style="margin-right: 15%; height:30px">Notes</a>
-                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                    <a mat-list-item  style="border-radius:10px 40px 40px 10px ;"><img
                             src="assets\image\notifications_FILL0_wght400_GRAD0_opsz48.png"
                             style="margin-right: 15%; height:30px">Remainders</a>
-                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                    <a mat-list-item  style="border-radius:10px 40px 40px 10px ;"><img
                             src="assets\image\edit_FILL0_wght400_GRAD0_opsz48.png"
                             style="margin-right: 15%; height:30px">Edit labels</a>
-                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                    <a mat-list-item routerLink="/dashboard/Archieve" style="border-radius:10px 40px 40px 10px ;"><img
                             src="assets\image\archive_FILL0_wght400_GRAD0_opsz48.png"
-                            style="margin-right: 15%; height:30px">Archive</a>
-                    <a mat-list-item style="border-radius:10px 40px 40px 10px ;"><img
+                            style="margin-right: 15%; height:30px" >Archive</a>
+                    <a mat-list-item  routerLink="/dashboard/Trash" style="border-radius:10px 40px 40px 10px ;"><img
                             src="assets\image\delete_FILL0_wght400_GRAD0_opsz48.png"
-                            style="margin-right: 15%; height:30px">Trash</a>
+                            style="margin-right: 15%; height:30px" >Trash</a>
                     <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
 
 

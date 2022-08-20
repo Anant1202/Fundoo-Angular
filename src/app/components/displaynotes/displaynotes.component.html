@@ -10,9 +10,12 @@
         <div (click)="openUpdateNoteDialog(note)">
             {{note.description}}
         </div>
+        <div (click)="openUpdateNoteDialog(note)">
+            {{note.noteID}}
+        </div>
     </div>
     <div class="noteicon">
-        <app-icons class="icons"></app-icons>
+        <app-icons  (autoRefreshmessageEvent)="dataReceivedfromIconComponent()" class="icons" [NoteID]="note.noteID"></app-icons>
     </div>
 
 

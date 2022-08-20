@@ -21,7 +21,7 @@ export class HttpService {
 
   }
   putService(url: string, reqData: any, token: boolean, httpHeadersOptions: any) {
-    console.log(reqData);
+    //console.log(reqData);
 
     return this.httpClient.put(this.BaseUrl + url, reqData, token && httpHeadersOptions)
   }

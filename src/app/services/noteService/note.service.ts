@@ -41,6 +41,29 @@ export class NoteService {
     }
     return this.httpService.putService('Note/Update?NoteId=' + noteID, reqData, true, httpOptions)
   }
+  TrashNote(reqData:any) {
+    this.token=localStorage.getItem("token")
+    console.log(reqData)
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.postService(`Note/Trash?NoteId=${reqData.noteID}`,reqData, true, httpOptions)
+  }
+
+  ArchiveNote(reqData:any) {
+    this.token=localStorage.getItem("token")
+    console.log(reqData)
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.postService(`Note/Archieve?NoteId=${reqData.noteID}`,reqData, true, httpOptions)
+  }
 }
 
 

@@ -3,6 +3,16 @@
     <img src="assets\image\2.svg" style="height:20px; opacity: 0.7;">
     <img src="assets\image\3.svg" style="height:20px; opacity: 0.7;">
     <img src="assets\image\4.svg" style="height:20px; opacity: 0.7;">
-    <img src="assets\image\5.svg" style="height:20px; opacity: 0.7;">
-    <img src="assets\image\6.svg" style="height:20px; opacity: 0.7;">
+    <img (click)="Archive()" src="assets\image\5.svg" style="height:20px; opacity: 0.7;">
+    <img  [matMenuTriggerFor]="menu" src="assets\image\6.svg" style="height:20px; opacity: 0.7;">
+    
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="Delete()">Delete note</button>
+            <button mat-menu-item>Add Label</button>
+            <button mat-menu-item>Add drawing</button>
+            <button mat-menu-item>Make a copy</button>
+            <button mat-menu-item>Show checkboxes</button>
+            <button mat-menu-item>Copy to Google Docs</button>
+        </mat-menu>
+    
 </div>

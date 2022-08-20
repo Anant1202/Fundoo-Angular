@@ -29,8 +29,9 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
 import { AuthguardServiceService } from './services/AuthguardService/authguard-service.service';
 import {MatMenuModule} from '@angular/material/menu';
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
-import { DeletenoteComponent } from './components/deletenote/deletenote.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TrashnoteComponent } from './components/trashnote/trashnote.component';
+import { ArchivenoteComponent } from './components/archivenote/archivenote.component';
 
 
 @NgModule({
@@ -46,7 +47,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     IconsComponent,
     DisplaynotesComponent,
     UpdatenoteComponent,
-    DeletenoteComponent
+    TrashnoteComponent,
+    ArchivenoteComponent,
+   
   ],
   imports: [
     BrowserModule,

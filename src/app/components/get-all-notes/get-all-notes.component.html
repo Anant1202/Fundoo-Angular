@@ -1,2 +1,2 @@
-<app-createnote></app-createnote>
-<app-displaynotes [MyNotes]="NoteArray"></app-displaynotes>
+<app-createnote (autoRefreshEventfromCreate)="getallnotes2()"></app-createnote>
+<app-displaynotes (autoRefreshEventfromDisplay)="getallnotes2()" [MyNotes]="NoteArray"></app-displaynotes>
